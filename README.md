@@ -48,22 +48,23 @@ spring:
       password: postgres
       driver-class-name: org.postgresql.Driver
 ```
-```
+
 ## Struktur Project
+```
 src
 └── main
     ├── java
     │   └── com.demo.java_25_rnd
-    │       ├── Java25RndApplication.java (Main Spring Boot app)
+    │       ├── Java25RndApplication.java  ####(Main Spring Boot app)
     │       ├── configs
-    │       │   └── DataSourceConfig.java (Konfigurasi WRITE/READ + routing)
+    │       │   └── DataSourceConfig.java  ####(Konfigurasi WRITE/READ + routing)
     │       ├── controllers
-    │       │   └── UserController.java (REST controller untuk User)
+    │       │   └── UserController.java    ####(REST controller untuk User)
     │       ├── entities
-    │       │   └── User.java (Entity JPA)
+    │       │   └── User.java              ####(Entity JPA)
     │       ├── repositories
-    │       │   └── UserRepository.java (JpaRepository<User, String>)
+    │       │   └── UserRepository.java    ####(JpaRepository<User, String>)
     │       └── services
-    │           └── UserService.java (Bisnis logic + @Transactional)
+    │           └── UserService.java       ####(Bisnis logic + @Transactional)
     └── resources
         └── application.yaml
