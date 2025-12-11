@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: java-25-rnd
+  autoconfigure:
+    exclude: org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration
+  datasource:
+    write:
+      url: jdbc:postgresql://localhost:5432/replication-rnd
+      username: postgres
+      password: postgres
+      driver-class-name: org.postgresql.Driver
+    read:
+      url: jdbc:postgresql://localhost:5433/replication-rnd
+      username: repl
+      password: postgres
+      driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate.format_sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.demo.java_25_rnd.configs.DataSourceConfig: INFO
+    com.demo.java_25_rnd.users: INFO
